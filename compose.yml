@@ -1,0 +1,11 @@
+services:
+  sdl2:
+    build: .
+    image: sdl2
+    volumes:
+      - ./:/sdl2_miyoo
+    restart: always
+    environment:
+      - MOD='mmiyoo'
+    command: ./setup.sh --all
+

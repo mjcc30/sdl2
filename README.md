@@ -32,25 +32,27 @@ docker build -t sdl2 .
 
 #### How to build all libraries (SDL2 and virtual GPU)
 ```
-docker run -it --rm -v $(pwd):/sdl2_miyoo sdl2 /bin/bash
+docker compose up
+# or run
+docker run -it --rm -v ./:/sdl2_miyoo sdl2 /bin/bash
 ./setup.sh --all
 ```
 
 #### How to build the SDL2 library only
 ```
-docker run -it --rm -v $(pwd):/sdl2_miyoo sdl2 /bin/bash
+docker run -it --rm -v ./:/sdl2_miyoo sdl2 /bin/bash
 ./setup.sh --sdl2
 ```
 
 #### How to build the virtual GPU (swiftshader) library only
 ```
-docker run -it --rm -v $(pwd):/sdl2_miyoo sdl2 /bin/bash
+docker run -it --rm -v ./:/sdl2_miyoo sdl2 /bin/bash
 ./setup.sh --gpu
 ```
 
 #### How to build the example
 ```
-docker run -it --rm -v $(pwd):/sdl2_miyoo sdl2 /bin/bash
+docker run -it --rm -v ./:/sdl2_miyoo sdl2 /bin/bash
 ./setup.sh --example
 ```
 
@@ -77,25 +79,25 @@ docker build -t sdl2 .
 
 #### How to build all libraries (SDL2 and virtual GPU)
 ```
-docker run -it --rm -v $(pwd):/sdl2_miyoo sdl2 /bin/bash
+docker run -it --rm -v ./:/sdl2_miyoo sdl2 /bin/bash
 ./setup.sh --all trimui
 ```
 
 #### How to build the SDL2 library only for trimui
 ```
-docker run -it --rm -v $(pwd):/sdl2_miyoo sdl2 /bin/bash
+docker run -it --rm -v ./:/sdl2_miyoo sdl2 /bin/bash
 ./setup.sh --sdl2 trimui
 ```
 
 #### How to build the virtual GPU (swiftshader) library only for trimui
 ```
-docker run -it --rm -v $(pwd):/sdl2_miyoo sdl2 /bin/bash
+docker run -it --rm -v ./:/sdl2_miyoo sdl2 /bin/bash
 ./setup.sh --gpu trimui
 ```
 
 #### How to build the example for trimui
 ```
-docker run -it --rm -v $(pwd):/sdl2_miyoo sdl2 /bin/bash
+docker run -it --rm -v ./:/sdl2_miyoo sdl2 /bin/bash
 ./setup.sh --example trimui
 ```
 
