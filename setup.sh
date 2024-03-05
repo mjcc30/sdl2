@@ -17,14 +17,14 @@ build_all() {
 # Function to build SDL2 library only
 build_sdl2() {
 	make clean && log_success "clean success"
-	make config MOD="$MOD" && log_success "clean success"
+	make config MOD="$MOD" && log_success "config success"
 	make sdl2 && log_success "build SDL2 success"
 }
 
 # Function to build virtual GPU (swiftshader) library only
 build_gpu() {
 	make clean && log_success "clean success"
-	make config MOD="$MOD" && log_success "clean success"
+	make config MOD="$MOD" && log_success "config success"
 	make gpu && log_success "build gpu success"
 }
 
