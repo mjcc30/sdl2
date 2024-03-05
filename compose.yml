@@ -2,10 +2,11 @@ services:
   sdl2:
     build: .
     image: sdl2
+    container_name: sdl2
     volumes:
       - ./:/sdl2_miyoo
-    restart: always
+    restart: "no"
     environment:
       - MOD='mmiyoo'
-    command: ./setup.sh --all
+    command: ./setup.sh --sdl2
 

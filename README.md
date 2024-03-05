@@ -32,14 +32,14 @@ docker build -t sdl2 .
 
 #### How to build all libraries (SDL2 and virtual GPU)
 ```
-docker compose up
-# or run
 docker run -it --rm -v ./:/sdl2_miyoo sdl2 /bin/bash
 ./setup.sh --all
 ```
 
 #### How to build the SDL2 library only
 ```
+docker compose up
+# or run
 docker run -it --rm -v ./:/sdl2_miyoo sdl2 /bin/bash
 ./setup.sh --sdl2
 ```
