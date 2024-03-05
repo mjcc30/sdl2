@@ -27,46 +27,36 @@ TBD
 ### Build from Scratch
 #### How to prepare the build environment (Docker)
 ```
-$ sudo docker build -t mmiyoo .
+docker build -t sdl2 .
 ```
 
 #### How to build all libraries (SDL2 and virtual GPU)
 ```
-$ sudo docker run -it --rm -v $(pwd):/sdl2_miyoo mmiyoo /bin/bash
-# cd /sdl2_miyoo
-# rm -rf swiftshader/build/*
-# make config
-# make
+docker run -it --rm -v $(pwd):/sdl2_miyoo sdl2 /bin/bash
+./setup.sh --all
 ```
 
 #### How to build the SDL2 library only
 ```
-$ sudo docker run -it --rm -v $(pwd):/sdl2_miyoo mmiyoo /bin/bash
-# cd /sdl2_miyoo
-# make clean
-# make config
-# make sdl2
+docker run -it --rm -v $(pwd):/sdl2_miyoo sdl2 /bin/bash
+./setup.sh --sdl2
 ```
 
 #### How to build the virtual GPU (swiftshader) library only
 ```
-$ sudo docker run -it --rm -v $(pwd):/sdl2_miyoo mmiyoo /bin/bash
-# cd /sdl2_miyoo
-# rm -rf swiftshader/build/*
-# make clean
-# make config
-# make gpu
+docker run -it --rm -v $(pwd):/sdl2_miyoo sdl2 /bin/bash
+./setup.sh --gpu
 ```
 
 #### How to build the example
 ```
-$ sudo docker run -it --rm -v $(pwd):/sdl2_miyoo mmiyoo /bin/bash
-# make example
+docker run -it --rm -v $(pwd):/sdl2_miyoo sdl2 /bin/bash
+./setup.sh --example
 ```
 
 #### How to delete the build environment (Docker)
 ```
-$ sudo docker image rm mmiyoo
+docker image rm mmiyoo
 ```
 
 &nbsp;
@@ -82,35 +72,34 @@ TBD
 ### Build from Scratch
 #### How to prepare the build environment (Docker)
 ```
-$ sudo docker build -t mmiyoo .
+docker build -t sdl2 .
 ```
 
 #### How to build all libraries (SDL2 and virtual GPU)
 ```
-$ sudo docker run -it --rm -v $(pwd):/sdl2_miyoo mmiyoo /bin/bash
-$ make config MOD=trimui
-$ make
+docker run -it --rm -v $(pwd):/sdl2_miyoo sdl2 /bin/bash
+./setup.sh --all trimui
 ```
 
-#### How to build the SDL2 library only
+#### How to build the SDL2 library only for trimui
 ```
-$ sudo docker run -it --rm -v $(pwd):/sdl2_miyoo mmiyoo /bin/bash
-$ make sdl2
-```
-
-#### How to build the virtual GPU (swiftshader) library only
-```
-$ sudo docker run -it --rm -v $(pwd):/sdl2_miyoo mmiyoo /bin/bash
-$ make gpu
+docker run -it --rm -v $(pwd):/sdl2_miyoo sdl2 /bin/bash
+./setup.sh --sdl2 trimui
 ```
 
-#### How to build the example
+#### How to build the virtual GPU (swiftshader) library only for trimui
 ```
-$ sudo docker run -it --rm -v $(pwd):/sdl2_miyoo mmiyoo /bin/bash
-$ make example MOD=trimui
+docker run -it --rm -v $(pwd):/sdl2_miyoo sdl2 /bin/bash
+./setup.sh --gpu trimui
+```
+
+#### How to build the example for trimui
+```
+docker run -it --rm -v $(pwd):/sdl2_miyoo sdl2 /bin/bash
+./setup.sh --example trimui
 ```
 
 #### How to delete the build environment (Docker)
 ```
-$ sudo docker image rm mmiyoo
+docker image rm sdl2
 ```

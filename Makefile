@@ -91,8 +91,8 @@ example:
 	$(CC) example/sdl2.c $(SDL2_INC) -lSDL2 -lSDL2_mixer -lSDL2_image -lSDL2_gfx -lSDL2_ttf swiftshader/build/libGLESv2.so -o example/sdl2
 	$(CXX) example/opengles.cpp -Wno-narrowing $(SDL2_INC) -lSDL2 -lSDL2_mixer -lSDL2_image -lSDL2_gfx -lSDL2_ttf swiftshader/build/libGLESv2.so -o example/opengles
 
-.PHONY: cfg
-cfg:
+.PHONY: config
+config:
 	cd sdl2 && ./autogen.sh && MOD=$(MOD) ./configure ${SDL2_CFG} --host=${HOST}
 	cd swiftshader/build && ${GPU_CMD}
 
