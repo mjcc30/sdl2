@@ -31,6 +31,18 @@ docker build -t sdl2 .
 docker run -it -d --name miyoo -v ./:/sdl2_miyoo sdl2 /bin/bash
 ```
 
+if you want to connect to the container
+```
+docker attach miyoo
+exit
+```
+
+if you want to copy some file from container
+```
+mkdir -p opt/SDL2
+docker cp miyoo:/opt/mmiyoo/arm-buildroot-linux-gnueabihf/sysroot/usr/include/SDL2 ./opt
+```
+
 #### How to build all libraries (SDL2 and virtual GPU)
 ```
 docker exec miyoo sh -c "./setup.sh --all"
